@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.shakthi.unitconverterkotlin"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.shakthi.unitconverterkotlin"
@@ -22,8 +22,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
