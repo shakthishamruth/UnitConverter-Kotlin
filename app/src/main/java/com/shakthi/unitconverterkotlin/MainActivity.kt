@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Button
@@ -29,6 +30,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.shakthi.unitconverterkotlin.ui.theme.UnitConverterKotlinTheme
 import kotlin.math.roundToInt
@@ -78,12 +80,15 @@ fun UnitConverter() {
         Text(text = "Unit Converter", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(value = inputValue,
+        OutlinedTextField(
+            value = inputValue,
             onValueChange = {
                 inputValue = it
                 convertUnit()
             },
-            label = { Text(text = "Enter Value") })
+            label = { Text(text = "Enter Value") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -158,7 +163,6 @@ fun UnitConverter() {
                 }
             }
         }
-
     }
 }
 
